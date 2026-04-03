@@ -1,0 +1,2 @@
+# Hybrid AI Career Decision Support System — Dependencies
+flask>=2.3.0
