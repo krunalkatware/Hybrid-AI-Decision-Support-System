@@ -13,7 +13,7 @@ from datetime import datetime
 
 # ─── Flask App Config ───
 # Serve HTML/CSS/JS from the current directory
-app = Flask(__name__, template_folder='.', static_folder='.', static_url_path='')
+app = Flask(__name__)
 
 # Enable CORS for local development
 @app.after_request
@@ -802,4 +802,7 @@ if __name__ == '__main__':
     print(f"  Health:   http://localhost:5000/health")
     print("=" * 60 + "\n")
 
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    import os
+
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
